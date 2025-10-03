@@ -1,0 +1,239 @@
+/* normalizacion  es un reseteo de caracteristas*/
+    
+*{
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+    font-family: 'inconsolata', monospace;
+    list-style: none; /* quita puntos lista */
+    text-decoration: none;
+    color: white;
+
+}
+body{
+    background-color: black;
+}
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+.logo{
+    font-size: 30px;
+    font-weight: 700px;
+}
+.navegacion{
+    /* ordenar elementos en linea */
+    display: flex;
+}
+.navegacion a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    /*para animar todas las caracteristicas del nav list a*/
+    transition: all 5.s aese; 
+
+}
+.navegacion a:hover {
+    border-bottom: 2px solid white;
+}
+
+#menu-icon{
+     
+    color: wheat;
+font-size: 35px;
+/* para que esté sobre el header */
+ z-index: 101px;  
+/* para que aparezca la manito */
+ cursor: pointer; 
+}
+#menu-toggle{
+display:none;
+}
+.menu-icon-action{
+display:none;
+}
+.heroe{ 
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    /* degrade de colores */
+    background: linear-gradient(245.59deg #1d5c42 0%, #2a3832 25%, #8adf01 75%);
+    /* para que sea relativo al contenedor */
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    /* para que haya espacio entre 2 columnas */
+     gap: 2rem;
+    }
+
+section{
+    padding: 0 8%;
+}
+.heroe-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+}
+.heroe-text h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+.heroe-text h4{ 
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+ }
+.heroe-text p{
+font-size: 80%;
+margin-bottom: 40px;
+line-height: 1.9;
+}
+.heroe-img img{
+width: 400px;
+margin:10% 0 0 10%;
+height: auto;
+transition: all 5s linear;
+}
+.heroe-img img:hover {
+border: 1px solid wheat;
+    width: 600px;
+opacity: 0.6;
+}
+.heroe-text a {
+    display: inline-block;
+    background-color:#1d5c42;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+    }
+.heroe-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+.heroe-text a .videos{
+    background-color:  transparent;
+    border: 1px solid white;
+    margin-left: 20px
+}
+.heroe-text a.videos i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.icons{
+    position: absolute;
+    top:50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+} 
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+.icons i:hover{
+    color:#8adf01;
+    transform: translateY(-5px);
+}
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scroll-down i{
+    /* barra de desplazamiento asteic */
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: aquamarine;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+.scroll-down:hover{
+    transform: translate(-5px);
+}
+/* mediaqueris subproceso */
+@media(max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .icons{
+        display: none;
+    }
+    .heroe-text{
+        padding-top: 0;
+    }
+    .heroe-img{
+        text-align: center;
+    }
+    .heroe-img img{
+        width: 80%;
+        margin: 10% 0 0  10%;
+    }
+    
+
+}
+@media (max-width: 768){ 
+    .menu-icon-action{
+        display:block;
+    }
+    #menu-icon{
+        display: block;
+    }
+    .heroe-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .heroe-img img{
+        margin: 0;
+    }
+    .heroe{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns:  1fr 1fr;
+    }
+    .navegacion{
+        /* menú por encima de la web cuando achicas */
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: cadetblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+    }
+    .navegacion a {
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+
+    }
+#menu-toggle:checked + label.menu-icon-action + ul{
+    right: 0;
+
+}
+}
